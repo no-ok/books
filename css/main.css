@@ -195,7 +195,8 @@ body.locked {
 
 @media (max-width: 375px) {
   .tab-link {
-    font-size: 14px; }
+    font-size: 14px;
+    flex-grow: 1; }
   .tabs {
     gap: 8px; }
   .container.text-center {
