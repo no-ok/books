@@ -81,28 +81,31 @@ body.locked {
 .grid-container {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   padding-bottom: 50px; }
 
-.book-item .book-img {
-  height: 350px;
-  padding: 20px;
-  overflow: hidden;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  cursor: pointer; }
-  .book-item .book-img:hover {
-    border-color: #000; }
-    .book-item .book-img:hover img {
-      transform: scale(1.03); }
-
-.book-item img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0 auto;
-  border-radius: 3px;
-  transition: all 0.3s cubic-bezier(0.1, 0.2, 0.7, 1); }
+.book-item {
+  margin-bottom: 20px;
+  background-color: #dee1e5;
+  border-radius: 10px;
+  padding: 16px; }
+  .book-item .book-img {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer; }
+    .book-item .book-img:hover {
+      border-color: #000; }
+      .book-item .book-img:hover img {
+        transform: scale(1.03); }
+  .book-item img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.1, 0.2, 0.7, 1); }
 
 .text-center {
   text-align: center;
@@ -167,27 +170,43 @@ body.locked {
     opacity: 1;
     transform: scale(1); } }
 
-@media (max-width: 1799px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
+.book-title {
+  font-size: 15px;
+  margin-top: 16px; }
+
+.book-title div {
+  text-align: left; }
+
+.book-title b {
+  font-size: 17px; }
 
 @media (max-width: 1799px) {
   .book-item .book-img {
-    height: 320px;
-    padding: 10px; } }
+    height: 360px; } }
+
+@media (max-width: 1399px) {
+  .book-item .book-img {
+    height: 320px; }
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
 
 @media (max-width: 767px) {
   .grid-container {
-    gap: 12px;
-    grid-template-columns: 1fr 1fr; }
-  .book-item .book-img {
-    height: 300px; }
+    display: block; }
+  .book-title {
+    display: block; }
+  .book-item {
+    margin-bottom: 40px; }
+    .book-item .book-img {
+      height: auto;
+      padding: 0;
+      margin-bottom: 10px; }
+  .tab-pane .text-center > h1 {
+    font-size: 22px !important; }
   .tab-link {
     font-size: 16px; } }
 
 @media (max-width: 575px) {
-  .book-item .book-img {
-    height: 220px; }
   .tab-link {
     font-size: 15px;
     padding: 10px;
