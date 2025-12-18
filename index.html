@@ -22,13 +22,15 @@
 	<body>
 		<div class="wrapper">
 			<main class="page-content">
-				<div class="tabs">
-					<div class="tab-link current" data-tab="tab-1">Шукаю</div>
+				<header class="main-header">
+					<div class="tabs">
+						<div class="tab-link current" data-tab="tab-1">Шукаю</div>
 
-					<div class="tab-link" data-tab="tab-2">Книги в колекції</div>
+						<div class="tab-link" data-tab="tab-2">Книги в колекції</div>
 
-					<div class="tab-link" data-tab="tab-3">Eл. книги</div>
-				</div>
+						<div class="tab-link" data-tab="tab-3">Eл. книги</div>
+					</div>
+				</header>
 
 				<div class="tab-content">
 					<div id="tab-1" class="tab-pane current">
@@ -2125,6 +2127,48 @@
 									<img src="img/paper/297.jpg" alt="1" loading="lazy">
 								</div>
 							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/298.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/299.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/300.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/301.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/302.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/303.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
+
+							<div class="book-item">
+								<div class="book-img">
+									<img src="img/paper/304.jpg" alt="1" loading="lazy">
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -2495,8 +2539,23 @@
 			</div>
 		</div>
 
+
+		<div id="scroll-top" class="visible">Вгору</div>
+
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
+				const header = document.querySelector(".main-header");
+				function checkScroll() {
+					if (window.scrollY > 10) {
+						header.classList.add("fixed");
+					} else {
+						header.classList.remove("fixed");
+					}
+				}
+				
+				window.addEventListener("scroll", checkScroll);
+				checkScroll();
+
 				document.querySelectorAll('.book-img').forEach(function(img) {
 					img.addEventListener('click', function() {
 					const src = this.querySelector("img").getAttribute("src");
@@ -2526,6 +2585,24 @@
 					document.querySelector('.zoom-box').classList.remove('visible');
 					});
 				});
+
+				const scrollTopBtn = document.getElementById("scroll-top");
+
+				scrollTopBtn.addEventListener("click", () => {
+					window.scrollTo({
+						top: 0,
+						behavior: "smooth"
+					});
+				});
+
+				document.addEventListener("scroll", () => {
+				if (window.scrollY > 600) {
+					scrollTopBtn.classList.add("visible");
+				} else {
+					scrollTopBtn.classList.remove("visible");
+				}
+				});
+
 			});
 		</script>
 	</body>
